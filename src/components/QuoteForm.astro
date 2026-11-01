@@ -1,0 +1,102 @@
+---
+import Icon from './Icon.astro';
+import { config } from '../lib/config';
+
+interface Props {
+  location: string;
+  heading?: string;
+}
+const { location, heading = 'Request a Free Leak Inspection' } = Astro.props;
+const f = config.forms;
+const id = (name: string) => `${location}-${name}`;
+const field =
+  'block w-full rounded-md border border-slate-300 bg-white py-3 pl-11 pr-3 text-base text-slate-900 placeholder:text-slate-500 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/25';
+const iconCls = 'pointer-events-none absolute left-3.5 top-3.5 h-5 w-5 text-slate-500';
+---
+<form
+  name={f.name}
+  method="POST"
+  action="/thank-you/"
+  enctype="multipart/form-data"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  data-netlify-recaptcha={f.recaptcha ? 'true' : undefined}
+  data-quote-form
+  class="rounded-xl bg-white p-6 text-slate-800 shadow-2xl ring-1 ring-black/5"
+>
+  <p class="heading text-2xl uppercase md:text-[1.7rem]">{heading}</p>
+  <p class="mt-1 text-slate-600">Tell us about the leak and we'll call you back fast.</p>
+
+  <input type="hidden" name="form-name" value={f.name} />
+  <input type="hidden" name="form_location" value={location} />
+  <input type="hidden" name="source_domain" value={config.site.domain} />
+  <input type="hidden" name="source_page" value="" />
+  <input type="hidden" name="landing_page" value="" />
+  <input type="hidden" name="utm_source" value="" />
+  <input type="hidden" name="utm_medium" value="" />
+  <input type="hidden" name="utm_campaign" value="" />
+  <input type="hidden" name="utm_term" value="" />
+  <input type="hidden" name="utm_content" value="" />
+  <p class="hidden" aria-hidden="true">
+    <label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+  </p>
+
+  <div class="mt-5 space-y-3">
+    <div class="relative">
+      <label for={id('name')} class="sr-only">Full name</label>
+      <Icon name="user" class={iconCls} />
+      <input id={id('name')} name="name" type="text" autocomplete="name" required placeholder="Full name" class={field} />
+    </div>
+    <div class="relative">
+      <label for={id('phone')} class="sr-only">Phone number</label>
+      <Icon name="phoneOutline" class={iconCls} />
+      <input id={id('phone')} name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="Phone number" class={field} />
+    </div>
+    <div class="grid grid-cols-[1fr_8rem] gap-3">
+      <div class="relative">
+        <label for={id('type')} class="sr-only">Property type</label>
+        <Icon name="home" class={iconCls} />
+        <select id={id('type')} name="property_type" required class:list={[field, 'appearance-none']}>
+          <option value="" disabled selected>Property type</option>
+          {f.propertyTypes.map((t) => <option value={t}>{t}</option>)}
+        </select>
+        <svg aria-hidden="true" class="pointer-events-none absolute right-3 top-4 h-4 w-4 text-slate-500" viewBox="0 0 20 20" fill="currentColor"><path d="M5.3 7.3a1 1 0 0 1 1.4 0L10 10.6l3.3-3.3a1 1 0 1 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 0-1.4z"/></svg>
+      </div>
+      <div class="relative">
+        <label for={id('zip')} class="sr-only">ZIP code</label>
+        <Icon name="pin" class={iconCls} />
+        <input id={id('zip')} name="zip" type="text" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" required placeholder="ZIP" class={field} />
+      </div>
+    </div>
+    <div class="relative">
+      <label for={id('leak')} class="sr-only">Describe the leak</label>
+      <Icon name="note" class={iconCls} />
+      <textarea id={id('leak')} name="leak_description" rows="3" placeholder="Tell us about the leak" class={field}></textarea>
+    </div>
+    <label for={id('photo')} class="flex cursor-pointer items-center gap-3 rounded-md border border-dashed border-slate-300 px-3.5 py-2.5 text-sm text-slate-600 hover:border-brand">
+      <Icon name="camera" class="h-5 w-5 shrink-0 text-slate-500" />
+      <span>Add a photo of the leak <span class="text-slate-500">(optional)</span></span>
+      <input id={id('photo')} name="photo" type="file" accept="image/*" class="sr-only" />
+    </label>
+  </div>
+
+  {f.recaptcha && <div class="mt-3" data-netlify-recaptcha="true"></div>}
+
+  <button type="submit" class="btn-gold mt-5 w-full text-lg">
+    Get a Free Inspection
+    <Icon name="chevron" class="h-5 w-5" />
+  </button>
+  <p class="mt-3 flex items-center gap-2 text-sm text-slate-600">
+    <Icon name="lock" class="h-4 w-4" />
+    We only use your info to contact you about your roof.
+  </p>
+</form>
+<script>
+  // Show the chosen photo's filename, since the file input itself is visually hidden.
+  document.querySelectorAll<HTMLInputElement>('form[data-quote-form] input[type=file]').forEach((input) => {
+    input.addEventListener('change', () => {
+      const label = input.closest('label')?.querySelector('span');
+      if (label && input.files?.[0]) label.textContent = `Photo added: ${input.files[0].name}`;
+    });
+  });
+</script>

@@ -1,0 +1,36 @@
+---
+import Icon from './Icon.astro';
+import { config, page } from '../lib/config';
+
+interface Props {
+  showLink?: boolean;
+}
+const { showLink = true } = Astro.props;
+const areas = page('service-areas');
+const names = config.serviceArea.counties.map((c) => c.name);
+const countyList = names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1];
+---
+<section class="py-14">
+  <div class="mx-auto max-w-7xl px-4">
+    <p class="eyebrow">Service areas</p>
+    <h2 class="heading mt-2 text-3xl md:text-[2.4rem]">Where We Fix Flat Roof Leaks</h2>
+    <p class="mt-3 text-lg text-slate-700">We serve {countyList} counties.</p>
+    <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {config.serviceArea.counties.map((c) => (
+        <div class="rounded-lg border-t-4 border-accent bg-white p-5 shadow-md ring-1 ring-slate-200">
+          <p class="flex items-center gap-2 font-display text-xl font-extrabold uppercase text-brand">
+            <Icon name="pin" class="h-5 w-5 text-accent-ink" />{c.name} County
+          </p>
+          <ul class="mt-3 space-y-1 text-slate-700">
+            {c.cities.map((city) => <li>{city}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+    {showLink && (
+      <a href={areas.path} class="mt-6 inline-flex items-center gap-1 font-display font-bold uppercase tracking-wide text-brand underline decoration-accent decoration-2 underline-offset-4">
+        See all {areas.anchor}<Icon name="arrow" class="h-4 w-4" />
+      </a>
+    )}
+  </div>
+</section>

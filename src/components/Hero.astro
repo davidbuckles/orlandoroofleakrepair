@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+import CallButton from './CallButton.astro';
+import QuoteForm from './QuoteForm.astro';
+import TrustStrip from './TrustStrip.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import { config } from '../lib/config';
+import { photo } from '../lib/photos';
+
+interface Props {
+  h1: string;
+  eyebrow?: string;
+  subhead?: string;
+  promise?: string;
+  crumbs: { name: string; path: string }[];
+  formLocation?: string;
+  formHeading?: string;
+}
+const {
+  h1,
+  eyebrow = `${config.site.city}, ${config.site.state}`,
+  subhead,
+  promise = config.claims.promise,
+  crumbs,
+  formLocation = 'hero',
+  formHeading,
+} = Astro.props;
+const heroPhoto = photo(config.photos.hero);
+---
+<section class="on-dark bg-hero relative overflow-hidden">
+  {heroPhoto && (
+    <>
+      <Image src={heroPhoto} alt="" widths={[640, 1280, 1920]} sizes="100vw" loading="eager" fetchpriority="high" class="absolute inset-0 h-full w-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/85 to-brand-dark/40"></div>
+    </>
+  )}
+  <div class="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-10 md:py-16 lg:grid-cols-[1fr_440px]">
+    <div class="text-white">
+      <Breadcrumbs crumbs={crumbs} dark />
+      <p class="font-display text-xl font-bold uppercase tracking-[0.3em] text-accent md:text-2xl">{eyebrow}</p>
+      <h1 class="mt-2 font-display text-4xl font-extrabold uppercase leading-[0.98] md:text-6xl">{h1}</h1>
+      {subhead && <p class="mt-5 text-xl font-medium text-white md:text-2xl">{subhead}</p>}
+      <p class="mt-4 max-w-xl text-lg text-slate-200">{promise}</p>
+      <CallButton location="hero" class="mt-7 w-full sm:w-auto" />
+      <TrustStrip />
+    </div>
+    <div id="quote">
+      <QuoteForm location={formLocation} heading={formHeading} />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCards from '../components/ServiceCards.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import CommercialBlock from '../components/CommercialBlock.astro';
+import Projects from '../components/Projects.astro';
+import ServiceAreas from '../components/ServiceAreas.astro';
+import Faq from '../components/Faq.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import BottomCta from '../components/BottomCta.astro';
+import { config, page } from '../lib/config';
+import { service, faqPage, crumbsFor } from '../lib/schema';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('pages');
+  return entries.map((entry) => {
+    const path = page(entry.id).path;
+    const slug = path === '/' ? undefined : path.replace(/^\/|\/$/g, '');
+    return { params: { slug }, props: { entry } };
+  });
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const id = entry.id;
+const p = page(id);
+const d = entry.data;
+const crumbs = crumbsFor(id);
+
+const schema: Record<string, unknown>[] = [faqPage(d.faqs)];
+if (p.serviceName) schema.push(service(p.serviceName, p.path, d.description));
+---
+<Base title={d.title} description={d.description} path={p.path} crumbs={crumbs} schema={schema}>
+  <Hero h1={d.h1} eyebrow={d.eyebrow} subhead={d.subhead} promise={d.promise} crumbs={crumbs} />
+
+  <ServiceCards exclude={id} />
+
+  <section class="py-14">
+    <div class="mx-auto max-w-3xl px-4">
+      <p class="eyebrow">{config.site.city} flat roof leak specialists</p>
+      <article class="prose prose-lg prose-slate mt-2 max-w-none prose-headings:font-display prose-headings:font-extrabold prose-headings:text-brand prose-h2:text-3xl prose-h2:leading-tight prose-a:font-semibold prose-a:text-brand prose-a:decoration-accent prose-a:decoration-2 prose-a:underline-offset-4 prose-li:marker:text-accent-ink [&>h2:first-child]:mt-0">
+        <Content />
+      </article>
+    </div>
+  </section>
+
+  <HowItWorks />
+
+  {d.commercial && <CommercialBlock {...d.commercial} />}
+
+  <Projects />
+
+  <ServiceAreas showLink={id !== 'service-areas'} />
+
+  <Faq faqs={d.faqs} />
+
+  <RelatedLinks related={d.related} showHome={id !== 'home'} />
+
+  <BottomCta />
+</Base>

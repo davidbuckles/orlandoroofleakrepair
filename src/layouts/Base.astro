@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyCall from '../components/StickyCall.astro';
+import { config, absUrl } from '../lib/config';
+import { roofingContractor, breadcrumbs } from '../lib/schema';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  crumbs: { name: string; path: string }[];
+  schema?: Record<string, unknown>[];
+  noindex?: boolean;
+}
+
+const { title, description, path, crumbs, schema = [], noindex = false } = Astro.props;
+const canonical = absUrl(path);
+const gtmId = config.tracking.gtmId;
+const c = config.colors;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [roofingContractor(), breadcrumbs(crumbs), ...schema],
+};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content={c.brand} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={config.site.businessName} />
+    <style set:html={`:root{--brand:${c.brand};--brand-dark:${c.brandDark};--accent:${c.accent};--accent-dark:${c.accentDark};--accent-ink:${c.accentInk}}`}></style>
+    <script is:inline>window.dataLayer = window.dataLayer || [];</script>
+    {gtmId && (
+      <script is:inline define:vars={{ gtmId }}>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',gtmId);
+      </script>
+    )}
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body class="bg-white font-sans text-slate-800 antialiased pb-20 md:pb-0">
+    {gtmId && (
+      <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`} height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    )}
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <StickyCall />
+    <script>
+      import '../scripts/tracking';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+---
+import Icon from './Icon.astro';
+import { page } from '../lib/config';
+
+interface Props {
+  related: string[];
+  showHome?: boolean;
+  showQuote?: boolean;
+}
+const { related, showHome = true, showQuote = true } = Astro.props;
+const ids = [...related, ...(showHome ? ['home'] : []), ...(showQuote ? ['quote'] : [])];
+const links = ids.map((id) => page(id));
+const cap = (s: string) => s[0].toUpperCase() + s.slice(1);
+---
+<section class="py-12">
+  <div class="mx-auto max-w-3xl px-4">
+    <p class="eyebrow">Keep reading</p>
+    <h2 class="heading mt-2 text-2xl">Related Services</h2>
+    <ul class="mt-5 grid gap-3 sm:grid-cols-2">
+      {links.map((l) => (
+        <li>
+          <a href={l.path} class="group flex items-center justify-between gap-3 rounded-lg border border-slate-200 p-4 font-semibold text-brand transition hover:border-accent hover:shadow-sm">
+            {cap(l.anchor)}
+            <Icon name="arrow" class="h-5 w-5 shrink-0 text-accent-ink transition group-hover:translate-x-1" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

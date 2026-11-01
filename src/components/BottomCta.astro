@@ -1,0 +1,35 @@
+---
+import CallButton from './CallButton.astro';
+import QuoteForm from './QuoteForm.astro';
+import Icon from './Icon.astro';
+import { config } from '../lib/config';
+
+const perks = [
+  { icon: 'chat' as const, label: config.claims.emergency247 ? 'A real person, 24/7' : 'Fast callbacks' },
+  { icon: 'shield' as const, label: `${config.license.label} ${config.license.number}` },
+  { icon: 'building' as const, label: 'Commercial & Residential' },
+];
+---
+<section class="on-dark bg-hero py-14 text-white md:py-16">
+  <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 lg:grid-cols-[1fr_440px]">
+    <div>
+      <p class="eyebrow">Need a leak inspection?</p>
+      <h2 class="mt-2 font-display text-3xl font-extrabold leading-[1.05] md:text-5xl">Let's Get Your Roof Leak Fixed.</h2>
+      <p class="mt-4 text-lg text-slate-200">
+        {config.claims.emergency247
+          ? 'Call now and talk to a real person, any hour. Or send the form and we will call you back.'
+          : 'Call now, or send the form and we will call you back the same day.'}
+      </p>
+      <CallButton location="bottom_cta" class="mt-7 w-full sm:w-auto" />
+      <ul class="mt-9 grid gap-4 sm:grid-cols-3">
+        {perks.map((p) => (
+          <li class="flex items-center gap-3">
+            <Icon name={p.icon} class="h-8 w-8 shrink-0 text-accent" />
+            <span class="font-display font-bold leading-tight">{p.label}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <QuoteForm location="bottom" />
+  </div>
+</section>

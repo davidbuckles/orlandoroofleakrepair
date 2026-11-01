@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@import "@fontsource/barlow/latin-600.css";
+@import "@fontsource/barlow/latin-700.css";
+@import "@fontsource/barlow/latin-800.css";
+@plugin "@tailwindcss/typography";
+
+/* Colors come from site.config.json via CSS variables set in Base.astro */
+@theme {
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-ink: var(--accent-ink);
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Barlow", system-ui, sans-serif;
+}
+
+@layer components {
+  /* Small gold all-caps label above headings */
+  .eyebrow {
+    @apply font-display text-sm font-bold uppercase tracking-[0.12em] text-accent-ink;
+  }
+  .on-dark .eyebrow,
+  .eyebrow-light {
+    @apply text-accent;
+  }
+  .heading {
+    @apply font-display font-extrabold leading-[1.05] text-brand;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-3.5 font-display font-bold uppercase tracking-wide text-brand-dark shadow-md transition hover:bg-accent-dark focus:outline-none focus-visible:ring-4 focus-visible:ring-accent/50;
+  }
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border-2 border-white/80 px-6 py-3 font-display font-bold uppercase tracking-wide text-white transition hover:bg-white hover:text-brand-dark;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.bg-hero {
+  background-color: var(--brand-dark);
+  background-image:
+    linear-gradient(100deg, rgba(10, 24, 48, 0.97) 0%, rgba(15, 35, 64, 0.88) 55%, rgba(15, 35, 64, 0.7) 100%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0 2px, transparent 2px 22px);
+}
+
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-icon {
+  transform: rotate(45deg);
+}

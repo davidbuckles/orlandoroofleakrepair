@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import CallButton from '../components/CallButton.astro';
+import { config } from '../lib/config';
+---
+<Base
+  title="Thank You | We Got Your Request"
+  description="Thanks for your request. We will call you back soon."
+  path="/thank-you/"
+  crumbs={[{ name: 'Home', path: '/' }, { name: 'Thank you', path: '/thank-you/' }]}
+  noindex
+>
+  <section class="mx-auto max-w-2xl px-4 py-16 text-center">
+    <h1 class="text-3xl font-extrabold text-brand md:text-4xl">Thanks. We got your request.</h1>
+    <p class="mt-4 text-lg text-slate-700">
+      Someone will call you back soon to set up your free leak inspection. Keep your phone close.
+    </p>
+    <div class="mt-8 rounded-xl border-2 border-accent bg-orange-50 p-6">
+      <p class="text-xl font-bold text-slate-900">Water coming in right now?</p>
+      <p class="mt-1 text-slate-700">
+        {config.claims.emergency247 ? 'Call us. We answer 24 hours a day, 7 days a week.' : 'Call us now so we can get there faster.'}
+      </p>
+      <CallButton location="thank_you" class="mt-4 w-full sm:w-auto" />
+    </div>
+    <p class="mt-8 text-sm text-slate-500">While you wait: move valuables away from the leak and put a bucket under drips.</p>
+    <a href="/" class="mt-6 inline-block font-semibold text-brand underline">Back to home</a>
+  </section>
+  <script>
+    // generate_lead fires once per submit, not on reload or direct visits.
+    try {
+      if (sessionStorage.getItem('lead_pending') === '1') {
+        const dl = ((window as any).dataLayer = (window as any).dataLayer || []);
+        dl.push({ event: 'generate_lead', property_type: sessionStorage.getItem('lead_property_type') || 'unknown' });
+        sessionStorage.removeItem('lead_pending');
+      }
+    } catch {}
+  </script>
+</Base>

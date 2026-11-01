@@ -1,0 +1,52 @@
+---
+import Icon from './Icon.astro';
+import { config, page } from '../lib/config';
+
+const quote = page('quote');
+const ctaHref = Astro.url.pathname === quote.path ? '#quote' : quote.path;
+const steps = [
+  {
+    icon: 'phoneOutline' as const,
+    title: 'Call or send the form',
+    body: config.claims.emergency247
+      ? 'Reach us any time, day or night. Tell us where the water is coming in.'
+      : 'Tell us where the water is coming in. We call you back the same day.',
+  },
+  {
+    icon: 'camera' as const,
+    title: 'Inspection with photos',
+    body: 'We find the real source of the leak and show you photos of what we found.',
+  },
+  {
+    icon: 'check' as const,
+    title: 'Repair with warranty',
+    body: 'You get a clear price first. Then we fix it and back the repair with a written warranty.',
+  },
+];
+---
+<section class="on-dark bg-hero py-14 text-white md:py-16">
+  <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 lg:grid-cols-[2fr_3fr]">
+    <div>
+      <p class="eyebrow">Our leak repair process</p>
+      <h2 class="mt-2 font-display text-3xl font-extrabold leading-[1.05] md:text-[2.6rem]">A Clear Plan From Inspection to Repair</h2>
+      <p class="mt-4 text-lg text-slate-200">From the first call to the final repair, you'll know exactly what's happening and what it costs.</p>
+      <a href={ctaHref} class="btn-gold mt-7">
+        Request an Inspection
+        <Icon name="chevron" class="h-5 w-5" />
+      </a>
+    </div>
+    <ol class="grid gap-8 sm:grid-cols-3">
+      {steps.map((s, i) => (
+        <li class="relative text-center">
+          {i < steps.length - 1 && (
+            <span aria-hidden="true" class="absolute left-[calc(50%+2.25rem)] top-6 hidden h-px w-[calc(100%-4.5rem)] bg-accent/70 sm:block"></span>
+          )}
+          <span class="mx-auto flex h-12 w-12 items-center justify-center rounded-full border-2 border-accent font-display text-xl font-extrabold text-accent">{i + 1}</span>
+          <Icon name={s.icon} class="mx-auto mt-5 h-11 w-11 text-white" />
+          <p class="mt-3 font-display text-lg font-extrabold uppercase">{s.title}</p>
+          <p class="mt-1 text-slate-300">{s.body}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

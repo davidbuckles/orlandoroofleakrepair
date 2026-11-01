@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import CallButton from '../components/CallButton.astro';
+---
+<Base
+  title="Page Not Found"
+  description="This page does not exist. Call us or head back home."
+  path="/404/"
+  crumbs={[{ name: 'Home', path: '/' }]}
+  noindex
+>
+  <section class="mx-auto max-w-2xl px-4 py-16 text-center">
+    <h1 class="text-3xl font-extrabold text-brand">We can't find that page.</h1>
+    <p class="mt-4 text-lg text-slate-700">If your roof is leaking, call us now.</p>
+    <CallButton location="404" class="mt-6" />
+    <p class="mt-6"><a href="/" class="font-semibold text-brand underline">Go to the home page</a></p>
+  </section>
+</Base>

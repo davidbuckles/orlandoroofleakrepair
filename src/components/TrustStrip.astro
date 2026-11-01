@@ -1,0 +1,27 @@
+---
+import Icon from './Icon.astro';
+import { config, licenseLine } from '../lib/config';
+
+interface Props {
+  dark?: boolean;
+}
+const { dark = true } = Astro.props;
+
+type Item = { icon: 'shield' | 'clock' | 'building' | 'check'; line1: string; line2: string };
+const items: Item[] = [{ icon: 'shield', line1: config.license.label, line2: config.license.number }];
+if (config.claims.emergency247) items.push({ icon: 'clock', line1: '24/7 Emergency', line2: 'Leak Response' });
+if (config.trust.insured) items.push({ icon: 'building', line1: 'Fully Insured', line2: 'Commercial & Residential' });
+if (config.trust.yearsInBusiness) items.push({ icon: 'check', line1: `${config.trust.yearsInBusiness}+ Years`, line2: 'In Business' });
+const r = config.trust.reviews;
+if (r.enabled && r.rating && r.count) items.push({ icon: 'check', line1: `★ ${r.rating} Rating`, line2: `${r.count} Reviews` });
+---
+<ul class="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-3" aria-label={licenseLine}>
+  {items.map((t) => (
+    <li class="flex items-center gap-3">
+      <Icon name={t.icon} class="h-9 w-9 shrink-0 text-accent" />
+      <span class:list={['font-display text-[0.95rem] font-bold leading-tight', dark ? 'text-white' : 'text-brand']}>
+        {t.line1}<br />{t.line2}
+      </span>
+    </li>
+  ))}
+</ul>
