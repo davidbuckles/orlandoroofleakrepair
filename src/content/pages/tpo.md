@@ -4,7 +4,7 @@ description: "TPO roof leaking in Orlando? We repair failed seams, punctures and
 h1: "TPO Roof Leak Repair in Orlando"
 eyebrow: "Single-ply roofs"
 subhead: "Open seams and punctures, found and welded shut."
-related: ["leak-detection", "commercial"]
+related: ["flat", "modified-bitumen"]
 commercial:
   heading: "TPO repairs for commercial buildings"
   intro: "TPO is one of the most common roofs on Central Florida warehouses, stores and offices. We keep yours watertight without shutting you down."
@@ -43,4 +43,4 @@ Punctures are one of the most common causes of TPO leaks. Dropped tools, foot tr
 
 ## Flashing and edges
 
-TPO also leaks where it meets walls, curbs, pipes and drains. If the leak is at one of these details, see our page on [roof drain and flashing leak repair](/roof-drain-flashing-leak-repair/). Can't find the leak? [Flat roof leak detection](/flat-roof-leak-detection/) can pinpoint it.
+TPO also leaks where it meets walls, curbs, pipes and drains. If the leak is at one of these details, see our page on [roof drain and flashing leak repair](/roof-flashing-leak-repair/). Can't find the leak? [Roof leak detection](/roof-leak-detection/) can pinpoint it. For other flat roof types, see [flat roof leak repair](/flat-roof-leak-repair/).

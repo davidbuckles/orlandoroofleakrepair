@@ -4,7 +4,7 @@ description: "Modified bitumen or torch-down roof leaking in Orlando? We fix bli
 h1: "Modified Bitumen Roof Leak Repair in Orlando"
 eyebrow: "Torch-down roofs"
 subhead: "Cracked laps and blisters repaired to add years to your roof."
-related: ["tpo", "drains-flashing"]
+related: ["flat", "tpo"]
 commercial:
   heading: "Mod bit repairs on commercial and multifamily roofs"
   intro: "Many older Orlando strip centers, offices and apartment buildings have modified bitumen roofs. We repair them to buy you more years before replacement."
@@ -46,4 +46,4 @@ Modified bitumen holds up well, but Florida sun is tough on asphalt. Year after 
 
 **Worn surface:** We patch bare or cracked areas. If wear is widespread, a coating may add life to the roof. We will tell you honestly if it's time to think about replacement instead.
 
-**Flashing:** Many leaks are at walls, curbs and drains, not in the open roof. See [roof drain and flashing leak repair](/roof-drain-flashing-leak-repair/). If your building has a white single-ply roof instead, see [TPO roof leak repair](/tpo-roof-leak-repair/).
+**Flashing:** Many leaks are at walls, curbs and drains, not in the open roof. See [roof drain and flashing leak repair](/roof-flashing-leak-repair/). If your building has a white single-ply roof instead, see [TPO roof leak repair](/tpo-roof-leak-repair/), or see all [flat roof leak repair](/flat-roof-leak-repair/) options.

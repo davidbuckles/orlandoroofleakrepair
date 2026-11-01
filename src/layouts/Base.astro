@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import StickyCall from '../components/StickyCall.astro';
 import { config, absUrl } from '../lib/config';
-import { roofingContractor, breadcrumbs } from '../lib/schema';
+import { roofingContractor, website, breadcrumbs } from '../lib/schema';
 
 interface Props {
   title: string;
@@ -22,7 +22,7 @@ const c = config.colors;
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@graph': [roofingContractor(), breadcrumbs(crumbs), ...schema],
+  '@graph': [roofingContractor(), website(), breadcrumbs(crumbs), ...schema],
 };
 ---
 <!doctype html>
@@ -41,6 +41,8 @@ const jsonLd = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={config.site.businessName} />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary" />
     <style set:html={`:root{--brand:${c.brand};--brand-dark:${c.brandDark};--accent:${c.accent};--accent-dark:${c.accentDark};--accent-ink:${c.accentInk}}`}></style>
     <script is:inline>window.dataLayer = window.dataLayer || [];</script>
     {gtmId && (

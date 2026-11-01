@@ -1,6 +1,6 @@
-# Flat roof leak lead-gen site (Astro + Tailwind)
+# Roof leak lead-gen site (Astro + Tailwind)
 
-Static lead-gen template. Built first for **orlandoroofleakrepair.com** (flat and low-slope roof leaks); clone it for the other domains.
+Static lead-gen template. Built first for **orlandoroofleakrepair.com** (roof leak repair on shingle, tile, metal and flat roofs); clone it for the other domains.
 
 ## Run locally
 
@@ -21,7 +21,9 @@ npm run preview    # serves dist/ to check the production build
 | Shared sections (hero, form, steps, areas, FAQ, footer) | `src/components/` |
 | GTM dataLayer events | `src/scripts/tracking.ts` |
 | Lead → Go High Level | `netlify/functions/submission-created.mjs` |
-| www → non-www redirect | written at build by `astro.config.mjs` |
+| www → non-www redirect, plus 301s for retired URLs (`redirects` in config) | written at build by `astro.config.mjs` |
+| Service cards, footer service links, schema offer list | every page in config with a `card` |
+| Breadcrumb parent (e.g. TPO under Flat Roof Leaks) | `parent` on a page in config |
 
 ## Before launch (not done yet)
 
@@ -30,7 +32,8 @@ npm run preview    # serves dist/ to check the production build
 - [ ] **Cost page:** has no price ranges. Add real ranges from Bradford's jobs if you want them on the page.
 - [ ] **Photos:** none yet. Add real job photos only: put them in `src/assets/photos/`, then list them in `site.config.json` → `photos.hero` (filename) and `photos.projects` (`{ "file", "title", "city", "alt" }`). Astro converts them to WebP with width/height set. The "Real Repairs. Real Results." section stays hidden until `projects` has entries.
 - [ ] **Years in business / reviews:** set `trust.yearsInBusiness` and `trust.reviews` once confirmed. They show up automatically.
-- [ ] **Business name:** "Orlando Flat Roof Leak Repair". Confirm it's registered as a Florida fictitious name and qualified under CCC1335348 with DBPR.
+- [ ] **Business name:** "Orlando Roof Leak Repair". Confirm it's registered as a Florida fictitious name and qualified under CCC1335348 with DBPR.
+- [ ] **Profiles:** once real profiles exist (Google Business Profile, Facebook, Yelp, BBB), list their URLs in `site.sameAs`.
 - [ ] **Text alerts:** decide who gets Go High Level lead texts and during which hours.
 
 ## GTM events pushed by the site

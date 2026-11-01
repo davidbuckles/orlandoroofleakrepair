@@ -1,9 +1,9 @@
 ---
-title: "Flat Roof Leak Repair Central Florida | Service Areas"
-description: "We repair flat roof leaks across Orange, Osceola, Lake and Volusia counties, from Orlando to Daytona Beach. Same-day response, 24/7 emergencies. Call now."
-h1: "Flat Roof Leak Repair Across Central Florida"
+title: "Roof Leak Repair Central Florida | Service Areas"
+description: "We repair roof leaks across Orange, Osceola, Lake and Volusia counties, from Orlando to Daytona Beach. Shingle, tile, metal and flat roofs. Call now."
+h1: "Roof Leak Repair Across Central Florida"
 eyebrow: "Orange · Osceola · Lake · Volusia"
-subhead: "One call for flat roof leaks from Orlando to Daytona Beach."
+subhead: "One call for roof leaks from Orlando to Daytona Beach."
 promise: "Serving Orange, Osceola, Lake and Volusia counties. Same-day response."
 related: ["emergency", "commercial"]
 faqs:
@@ -16,25 +16,25 @@ faqs:
   - q: "My city isn't listed. Can you still help?"
     a: "Maybe. If you are close to one of these areas, give us a call and we will let you know."
   - q: "Do coastal roofs need different repairs?"
-    a: "Roofs near Daytona Beach deal with more wind and salt air. That can wear out metal flashing and edges faster, so we check those closely."
+    a: "Roofs near Daytona Beach deal with more wind and salt air. That wears out metal flashing, screws and roof edges faster, so we check those closely."
 ---
 
 ## Orange County
 
-We fix flat roof leaks on warehouses, offices, stores, apartments and homes in **Orlando**, **Winter Park**, **Apopka** and **Winter Garden**. Many buildings here have TPO or modified bitumen roofs that take a beating from daily summer storms.
+We fix roof leaks on homes, condos, offices, stores and warehouses in **Orlando**, **Winter Park**, **Apopka** and **Winter Garden**. Homes here are a mix of shingle and concrete tile, and the stores, offices and warehouses often have flat or metal roofs. All of them take a beating from daily summer storms.
 
 ## Osceola County
 
-In **Kissimmee** and **St. Cloud**, we repair roofs on shopping centers, offices, apartment communities and HOA clubhouses. Fast response matters here, where a leak can affect many tenants at once.
+In **Kissimmee** and **St. Cloud**, we repair leaks on single-family homes, vacation rentals, shopping centers and apartment communities. Fast response matters here, where a leak can affect guests or many tenants at once.
 
 ## Lake County
 
-We serve **Clermont**, **Leesburg** and **Mount Dora**. On older built-up and mod bit roofs, we check the flashing and drains first, since that's where aging roofs tend to leak.
+We serve **Clermont**, **Leesburg** and **Mount Dora**. Lake County has a mix of shingle homes, metal roofs on rural properties and older commercial buildings. On aging roofs, we check the flashing and pipe boots first, since that's where they tend to leak.
 
 ## Volusia County
 
-We fix flat roof leaks in **DeLand**, **Deltona** and **Daytona Beach**. Coastal wind and salt air are hard on roof edges and metal flashing, so we pay close attention to those details.
+We fix roof leaks in **DeLand**, **Deltona** and **Daytona Beach**. Coastal wind and salt air are hard on roof edges, metal flashing and screws, so we pay close attention to those details.
 
 ## One number for every location
 
-Property managers with buildings in more than one county can call one number for all of them. See our [commercial roof leak repair](/commercial-roof-leak-repair/) services, or call now for [24/7 emergency flat roof leak repair](/emergency-flat-roof-leak-repair/).
+Property managers with buildings in more than one county can call one number for all of them. See our [commercial roof leak repair](/commercial-roof-leak-repair/) services, or call now for [24/7 emergency roof leak repair](/emergency-roof-leak-repair/).

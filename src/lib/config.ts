@@ -10,6 +10,7 @@ export interface PageConfig {
   supportingTerms: string[];
   anchor: string;
   serviceName?: string;
+  parent?: string;
   card?: { title: string; blurb: string; icon: string };
   logo?: { line1: string; line2: string };
 }

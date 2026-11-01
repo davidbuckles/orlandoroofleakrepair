@@ -5,7 +5,8 @@ import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import config from './site.config.json' with { type: 'json' };
 
-// Writes Netlify's _redirects so www always 301s to the bare domain.
+// Writes Netlify's _redirects: www always 301s to the bare domain, and retired
+// URLs listed in site.config.json "redirects" 301 to their replacements.
 const netlifyRedirects = {
   name: 'netlify-redirects',
   hooks: {
@@ -14,6 +15,7 @@ const netlifyRedirects = {
       const rules = [
         `http://www.${domain}/*  https://${domain}/:splat  301!`,
         `https://www.${domain}/*  https://${domain}/:splat  301!`,
+        ...(config.redirects ?? []).map((r) => `${r.from}  ${r.to}  301!`),
       ];
       writeFileSync(fileURLToPath(new URL('_redirects', dir)), rules.join('\n') + '\n');
     },

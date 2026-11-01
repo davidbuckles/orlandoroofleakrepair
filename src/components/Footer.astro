@@ -1,15 +1,16 @@
 ---
 import Logo from './Logo.astro';
-import { config, page, telHref, licenseLine } from '../lib/config';
+import { config, page, servicePageIds, telHref, licenseLine } from '../lib/config';
 
 const links = config.nav.map((id) => page(id));
+const services = servicePageIds.map((id) => page(id));
 const year = new Date().getFullYear();
 ---
 <footer class="border-t-4 border-accent bg-brand-dark text-slate-300">
-  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-3">
+  <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 md:grid-cols-2 lg:grid-cols-4">
     <div>
       <Logo dark />
-      <p class="mt-4 text-sm">Flat and low-slope roof leak repair across {config.site.region}.</p>
+      <p class="mt-4 text-sm">Roof leak repair for shingle, tile, metal and flat roofs across {config.site.region}.</p>
       <p class="mt-3 font-display font-bold text-white">{licenseLine}</p>
       {config.trust.insured && <p class="text-sm">Fully insured</p>}
       <a href={telHref} data-location="footer" class="mt-3 inline-block font-display text-2xl font-extrabold text-accent hover:underline">
@@ -24,11 +25,18 @@ const year = new Date().getFullYear();
         ))}
       </ul>
     </div>
+    <nav aria-label="Services">
+      <p class="font-display font-bold uppercase tracking-wide text-white">Leak repair services</p>
+      <ul class="mt-3 space-y-1.5 text-sm">
+        {services.map((s) => <li><a href={s.path} class="hover:text-accent">{s.card!.title}</a></li>)}
+      </ul>
+    </nav>
     <nav aria-label="Footer">
       <p class="font-display font-bold uppercase tracking-wide text-white">Quick links</p>
       <ul class="mt-3 space-y-1.5 text-sm">
         <li><a href="/" class="hover:text-accent">Home</a></li>
         {links.map((l) => <li><a href={l.path} class="hover:text-accent">{l.label}</a></li>)}
+        <li><a href={page('service-areas').path} class="hover:text-accent">{page('service-areas').label}</a></li>
       </ul>
     </nav>
   </div>

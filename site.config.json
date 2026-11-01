@@ -2,11 +2,13 @@
   "site": {
     "domain": "orlandoroofleakrepair.com",
     "url": "https://orlandoroofleakrepair.com",
-    "businessName": "Orlando Flat Roof Leak Repair",
+    "businessName": "Orlando Roof Leak Repair",
     "city": "Orlando",
     "state": "FL",
     "region": "Central Florida",
-    "description": "Flat and low-slope roof leak repair in Orlando and Central Florida. Same-day response, 24/7 emergencies, licensed and insured."
+    "description": "Roof leak repair in Orlando and Central Florida for shingle, tile, metal and flat roofs. Same-day response, 24/7 emergencies, licensed and insured.",
+    "sameAs": [],
+    "_sameAsNote": "Add real profile URLs (Google Business Profile, Facebook, Yelp, BBB) once they exist. They go into the RoofingContractor schema."
   },
   "contact": {
     "phoneDisplay": "407-947-1851",
@@ -16,7 +18,8 @@
   },
   "license": {
     "label": "Licensed Florida",
-    "number": "CCC1335348"
+    "number": "CCC1335348",
+    "credentialName": "Florida Certified Roofing Contractor"
   },
   "trust": {
     "insured": true,
@@ -47,11 +50,11 @@
     "name": "quote",
     "recaptcha": false,
     "_recaptchaNote": "Honeypot + Netlify's built-in spam filter are always on. Set true to add Netlify reCAPTCHA (costs mobile PageSpeed points).",
-    "propertyTypes": ["Commercial", "Residential", "HOA"],
+    "propertyTypes": ["Residential", "Commercial", "HOA"],
     "crmWebhookEnvVar": "GHL_WEBHOOK_URL"
   },
   "logo": {
-    "line1": "Orlando Flat Roof",
+    "line1": "Orlando Roof",
     "line2": "Leak Repair"
   },
   "colors": {
@@ -66,24 +69,65 @@
     "hero": "",
     "projects": []
   },
-  "nav": ["emergency", "commercial", "leak-detection", "cost", "quote"],
+  "nav": ["emergency", "leak-detection", "commercial", "cost", "quote"],
+  "redirects": [
+    { "from": "/emergency-flat-roof-leak-repair/", "to": "/emergency-roof-leak-repair/" },
+    { "from": "/flat-roof-leak-detection/", "to": "/roof-leak-detection/" },
+    { "from": "/flat-roof-leak-repair-cost/", "to": "/roof-leak-repair-cost/" },
+    { "from": "/roof-drain-flashing-leak-repair/", "to": "/roof-flashing-leak-repair/" }
+  ],
   "pages": {
     "home": {
       "path": "/",
       "label": "Home",
-      "logo": { "line1": "Orlando Roof", "line2": "Leak Repair" },
-      "primaryKeyword": "flat roof leak repair Orlando",
-      "supportingTerms": ["flat roof leaking Orlando FL", "low-slope roof leak repair"],
-      "anchor": "flat roof leak repair in Orlando"
+      "primaryKeyword": "roof leak repair Orlando",
+      "supportingTerms": ["roof leaking Orlando FL", "roof leak repair near me"],
+      "anchor": "roof leak repair in Orlando"
     },
     "emergency": {
-      "path": "/emergency-flat-roof-leak-repair/",
+      "path": "/emergency-roof-leak-repair/",
       "label": "Emergency",
-      "primaryKeyword": "emergency flat roof leak repair Orlando",
+      "primaryKeyword": "emergency roof leak repair Orlando",
       "supportingTerms": ["24 hour", "storm leak", "roof leaking now"],
-      "anchor": "24/7 emergency flat roof leak repair",
-      "serviceName": "Emergency flat roof leak repair",
+      "anchor": "24/7 emergency roof leak repair",
+      "serviceName": "Emergency roof leak repair",
       "card": { "title": "Emergency Leak Repair", "blurb": "Storm leaks, water coming in now", "icon": "bolt" }
+    },
+    "shingle": {
+      "path": "/shingle-roof-leak-repair/",
+      "label": "Shingle Roof Leaks",
+      "primaryKeyword": "shingle roof leak repair Orlando",
+      "supportingTerms": ["missing shingles", "pipe boot leak", "storm damage"],
+      "anchor": "shingle roof leak repair",
+      "serviceName": "Shingle roof leak repair",
+      "card": { "title": "Shingle Roof Leaks", "blurb": "Missing shingles, pipe boots, valleys", "icon": "shingle" }
+    },
+    "tile": {
+      "path": "/tile-roof-leak-repair/",
+      "label": "Tile Roof Leaks",
+      "primaryKeyword": "tile roof leak repair Orlando",
+      "supportingTerms": ["cracked tiles", "underlayment", "concrete and clay tile"],
+      "anchor": "tile roof leak repair",
+      "serviceName": "Tile roof leak repair",
+      "card": { "title": "Tile Roof Leaks", "blurb": "Cracked tiles, worn underlayment", "icon": "tile" }
+    },
+    "metal": {
+      "path": "/metal-roof-leak-repair/",
+      "label": "Metal Roof Leaks",
+      "primaryKeyword": "metal roof leak repair Orlando",
+      "supportingTerms": ["loose screws", "standing seam", "rust"],
+      "anchor": "metal roof leak repair",
+      "serviceName": "Metal roof leak repair",
+      "card": { "title": "Metal Roof Leaks", "blurb": "Screws, seams, rust and trim", "icon": "metal" }
+    },
+    "flat": {
+      "path": "/flat-roof-leak-repair/",
+      "label": "Flat Roof Leaks",
+      "primaryKeyword": "flat roof leak repair Orlando",
+      "supportingTerms": ["TPO", "modified bitumen", "built-up", "low-slope"],
+      "anchor": "flat roof leak repair",
+      "serviceName": "Flat roof leak repair",
+      "card": { "title": "Flat Roof Leaks", "blurb": "TPO, mod bit, built-up", "icon": "layers" }
     },
     "commercial": {
       "path": "/commercial-roof-leak-repair/",
@@ -94,62 +138,62 @@
       "serviceName": "Commercial roof leak repair",
       "card": { "title": "Commercial Roof Leaks", "blurb": "Warehouse, retail, office, HOA", "icon": "building" }
     },
+    "leak-detection": {
+      "path": "/roof-leak-detection/",
+      "label": "Leak Detection",
+      "primaryKeyword": "roof leak detection Orlando",
+      "supportingTerms": ["attic inspection", "water testing", "infrared scan"],
+      "anchor": "roof leak detection",
+      "serviceName": "Roof leak detection",
+      "card": { "title": "Leak Detection", "blurb": "Attic checks, water tests, infrared", "icon": "search" }
+    },
+    "drains-flashing": {
+      "path": "/roof-flashing-leak-repair/",
+      "label": "Flashing & Vents",
+      "primaryKeyword": "roof flashing leak repair Orlando",
+      "supportingTerms": ["chimney", "skylight", "pipe boots", "roof drains"],
+      "anchor": "flashing, vent and roof drain leak repair",
+      "serviceName": "Roof flashing and vent leak repair",
+      "card": { "title": "Flashing & Vents", "blurb": "Chimneys, skylights, pipe boots, drains", "icon": "drain" }
+    },
     "tpo": {
       "path": "/tpo-roof-leak-repair/",
       "label": "TPO Leaks",
+      "parent": "flat",
       "primaryKeyword": "TPO roof leak repair Orlando",
       "supportingTerms": ["seam failure", "membrane puncture"],
       "anchor": "TPO seam and membrane leak repair",
-      "serviceName": "TPO roof leak repair",
-      "card": { "title": "TPO Roof Leaks", "blurb": "Seam failures and punctures", "icon": "layers" }
+      "serviceName": "TPO roof leak repair"
     },
     "modified-bitumen": {
       "path": "/modified-bitumen-roof-leak-repair/",
       "label": "Modified Bitumen",
+      "parent": "flat",
       "primaryKeyword": "modified bitumen roof leak repair Orlando",
       "supportingTerms": ["torch-down", "blisters", "cracked laps"],
       "anchor": "modified bitumen and torch-down leak repair",
-      "serviceName": "Modified bitumen roof leak repair",
-      "card": { "title": "Modified Bitumen Leaks", "blurb": "Torch-down, blisters, cracked laps", "icon": "flame" }
-    },
-    "leak-detection": {
-      "path": "/flat-roof-leak-detection/",
-      "label": "Leak Detection",
-      "primaryKeyword": "roof leak detection Orlando",
-      "supportingTerms": ["infrared scan", "moisture survey"],
-      "anchor": "flat roof leak detection and moisture surveys",
-      "serviceName": "Flat roof leak detection",
-      "card": { "title": "Leak Detection", "blurb": "Infrared scans, moisture surveys", "icon": "search" }
-    },
-    "drains-flashing": {
-      "path": "/roof-drain-flashing-leak-repair/",
-      "label": "Drains & Flashing",
-      "primaryKeyword": "roof drain leak repair Orlando",
-      "supportingTerms": ["scuppers", "HVAC curbs", "parapet flashing"],
-      "anchor": "roof drain, scupper and flashing leak repair",
-      "serviceName": "Roof drain and flashing leak repair",
-      "card": { "title": "Drains & Flashing", "blurb": "Scuppers, HVAC curbs, parapets", "icon": "drain" }
+      "serviceName": "Modified bitumen roof leak repair"
     },
     "service-areas": {
       "path": "/service-areas/",
       "label": "Service Areas",
-      "primaryKeyword": "flat roof leak repair Central Florida",
+      "primaryKeyword": "roof leak repair Central Florida",
       "supportingTerms": ["Orange County", "Osceola County", "Lake County", "Volusia County"],
       "anchor": "service areas across Central Florida"
     },
     "cost": {
-      "path": "/flat-roof-leak-repair-cost/",
+      "path": "/roof-leak-repair-cost/",
       "label": "Cost",
-      "primaryKeyword": "flat roof leak repair cost Orlando",
+      "primaryKeyword": "roof leak repair cost Orlando",
       "supportingTerms": ["price", "repair vs. replace"],
-      "anchor": "what flat roof leak repair costs"
+      "anchor": "what roof leak repair costs"
     },
     "quote": {
       "path": "/get-a-quote/",
       "label": "Get a Quote",
-      "primaryKeyword": "free flat roof leak inspection",
+      "primaryKeyword": "free roof leak inspection",
       "supportingTerms": ["free leak inspection"],
-      "anchor": "get a free leak inspection"
+      "anchor": "get a free roof leak inspection"
     }
   }
 }

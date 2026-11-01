@@ -1,6 +1,22 @@
-import { config, allCities, absUrl, page } from './config';
+import { config, allCities, absUrl, page, servicePageIds } from './config';
 
 const orgId = `${config.site.url}/#business`;
+const siteId = `${config.site.url}/#website`;
+
+const cityNodes = () => allCities.map((name) => ({ '@type': 'City', name: `${name}, ${config.site.state}` }));
+const countyNodes = () =>
+  config.serviceArea.counties.map((c) => ({ '@type': 'AdministrativeArea', name: `${c.name} County, ${config.site.state}` }));
+
+export function website() {
+  return {
+    '@type': 'WebSite',
+    '@id': siteId,
+    name: config.site.businessName,
+    url: absUrl('/'),
+    publisher: { '@id': orgId },
+    inLanguage: 'en-US',
+  };
+}
 
 // Service-area business: no street address on purpose (brief: no fake address).
 export function roofingContractor() {
@@ -11,16 +27,23 @@ export function roofingContractor() {
     url: absUrl('/'),
     telephone: config.contact.phoneE164,
     description: config.site.description,
-    areaServed: allCities.map((name) => ({
-      '@type': 'City',
-      name: `${name}, ${config.site.state}`,
-    })),
+    areaServed: [...cityNodes(), ...countyNodes()],
+    knowsAbout: ['Roof leak repair', 'Shingle roofs', 'Tile roofs', 'Metal roofs', 'Flat roofs', 'TPO roofs', 'Modified bitumen roofs', 'Roof flashing'],
     hasCredential: {
       '@type': 'EducationalOccupationalCredential',
       credentialCategory: 'license',
-      name: `Florida Certified Commercial Roofing Contractor ${config.license.number}`,
+      name: `${config.license.credentialName} ${config.license.number}`,
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Roof leak repair services',
+      itemListElement: servicePageIds.map((id) => {
+        const p = page(id);
+        return { '@type': 'Offer', itemOffered: { '@type': 'Service', name: p.serviceName, url: absUrl(p.path) } };
+      }),
     },
   };
+  if (config.site.sameAs.length) node.sameAs = config.site.sameAs;
   if (config.claims.emergency247) {
     node.openingHoursSpecification = {
       '@type': 'OpeningHoursSpecification',
@@ -44,7 +67,7 @@ export function service(name: string, path: string, description: string) {
     description,
     url: absUrl(path),
     provider: { '@id': orgId },
-    areaServed: allCities.map((c) => ({ '@type': 'City', name: `${c}, ${config.site.state}` })),
+    areaServed: cityNodes(),
   };
 }
 
@@ -75,5 +98,7 @@ export function crumbsFor(id: string) {
   const home = { name: 'Home', path: '/' };
   if (id === 'home') return [home];
   const p = page(id);
-  return [home, { name: p.label, path: p.path }];
+  const trail = [{ name: p.label, path: p.path }];
+  if (p.parent) trail.unshift({ name: page(p.parent).label, path: page(p.parent).path });
+  return [home, ...trail];
 }

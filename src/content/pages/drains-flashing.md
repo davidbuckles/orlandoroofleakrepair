@@ -1,10 +1,10 @@
 ---
-title: "Roof Drain Leak Repair Orlando | Scuppers & Flashing"
-description: "Leaks at roof drains, scuppers, HVAC curbs or parapet walls? We repair the details where most Orlando flat roof leaks start. Call for a free inspection."
-h1: "Roof Drain and Flashing Leak Repair in Orlando"
-eyebrow: "Where flat roofs really leak"
-subhead: "Drains, scuppers, HVAC curbs and parapet walls sealed tight."
-related: ["leak-detection", "commercial"]
+title: "Roof Flashing Leak Repair Orlando FL | Vents & Drains"
+description: "Leaks at chimneys, skylights, pipe boots or roof drains? We repair the flashing and vents where most Orlando roof leaks start. Call for a free inspection."
+h1: "Roof Flashing, Vent and Drain Leak Repair in Orlando"
+eyebrow: "Where most roofs really leak"
+subhead: "Chimneys, skylights, pipe boots, walls and drains sealed tight."
+related: ["leak-detection", "tile"]
 commercial:
   heading: "Keeping drains clear on commercial roofs"
   intro: "Clogged drains are one of the most common causes of commercial roof leaks, and one of the easiest to prevent."
@@ -13,36 +13,42 @@ commercial:
     - "Checks after big storms and after HVAC service"
     - "Photo reports for each building you manage"
 faqs:
-  - q: "Why do so many flat roof leaks start at drains?"
-    a: "All the water on the roof flows to the drains. If a drain is clogged, cracked or pulled loose, water piles up and finds a way in."
-  - q: "What is a scupper?"
-    a: "A scupper is an opening in the roof edge or parapet wall that lets water drain off the side of the building. The joint around it needs to be sealed tight."
-  - q: "What is flashing?"
-    a: "Flashing is the material that seals the roof where it meets something else, like a wall, curb, pipe or skylight. It is one of the most common places for leaks."
-  - q: "Why does my roof leak near the AC unit?"
-    a: "The curb under an HVAC unit has flashing on all four sides. Heat, vibration and service visits can loosen it. Techs can also damage the roof nearby."
+  - q: "What is roof flashing?"
+    a: "Flashing is the metal or membrane that seals the roof where it meets something else, like a wall, chimney, skylight, pipe or AC curb. It is the most common place for a roof to leak."
+  - q: "Why do so many leaks start around vents and pipes?"
+    a: "Every pipe or vent is a hole in the roof. On shingle roofs, the rubber pipe boot cracks in the Florida sun. On metal and flat roofs, the seal around the pipe dries out and pulls away."
+  - q: "My skylight leaks. Do I need a new skylight?"
+    a: "Not always. Most skylight leaks come from the flashing around it, not the glass. We check both and tell you which one is the problem."
+  - q: "Why does my roof leak near the chimney?"
+    a: "Chimneys have step flashing along the sides and counter flashing in the brick or stucco. If either one is loose, rusted or cracked, water runs behind it."
+  - q: "Why does my flat roof leak near the drain?"
+    a: "All the water on a flat roof flows to the drains. If a drain is clogged, cracked or pulled loose, water piles up and finds a way in."
   - q: "Can you fix ponding water?"
     a: "Often, yes. Ponding usually means a drain is blocked or the roof has a low spot. We can clear drains, add crickets to direct water, or fix low areas."
 ---
 
-## Where flat roofs really leak
+## Where roofs really leak
 
-The open middle of a flat roof rarely fails first. Most leaks start at the edges and openings, wherever the roof stops, turns a corner or goes around something. These are called details, and they take the most wear.
+The open field of a roof rarely fails first. Most leaks start where the roof stops, turns a corner or goes around something. These spots are called details, and they take the most wear on every roof type.
 
-## Roof drains
+## Pipe boots and roof vents
 
-All the water on a flat roof heads for the drains. Leaves, dirt and debris can clog them. The seal where the drain meets the roof can crack. The drain bowl can pull away. We clear the drain, check the seal and clamp ring, and repair or replace what's damaged.
+Plumbing vents, exhaust fans and attic vents all cut through the roof. On [shingle roofs](/shingle-roof-leak-repair/), the rubber pipe boot cracks in the sun and is the most common leak we fix. We replace worn boots and reseal vents so water runs past them, not into them.
 
-## Scuppers
+## Chimneys and walls
 
-Scuppers let water out through the roof edge or a parapet wall. The joint around the scupper box is a common leak point, especially when water backs up in heavy rain. We re-seal or rebuild the scupper and its flashing.
+Where a roof meets a wall or chimney, step flashing and counter flashing keep water out. Loose, rusted or caulk-only flashing lets water run behind it. We replace or rebuild the flashing instead of just smearing on more sealant.
 
-## HVAC curbs and rooftop equipment
+## Skylights
 
-Every AC unit sits on a curb with flashing around it. Heat, shaking and service visits loosen it over time. Technicians can also cut or puncture the roof by accident. We repair curb flashing and patch any damage around the unit.
+Most skylight leaks come from the flashing around the frame. We reflash the skylight and check the seal so it stays dry.
 
-## Parapet walls and wall flashing
+## Valleys
 
-Parapet walls are the short walls around a flat roof's edge. Water can get in through cracked caps, loose flashing or worn sealant. We repair the flashing and cap so water stays out.
+Valleys carry the most water on a sloped roof. On [tile roofs](/tile-roof-leak-repair/), metal valleys can rust or fill with debris and push water under the tile. We clear, repair or replace them.
 
-Not sure which detail is leaking? Start with [flat roof leak detection](/flat-roof-leak-detection/). Managing several buildings? See our [commercial roof leak repair](/commercial-roof-leak-repair/) services and maintenance plans.
+## Roof drains, scuppers and AC curbs
+
+On flat roofs, all the water heads for the drains and scuppers. When they clog or their seals crack, water piles up and gets in. AC units sit on curbs with flashing on all four sides that heat and service visits can loosen. We repair all of these details.
+
+Not sure which detail is leaking? Start with [roof leak detection](/roof-leak-detection/).
