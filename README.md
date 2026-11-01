@@ -1,6 +1,6 @@
 # Flat roof leak lead-gen site (Astro + Tailwind)
 
-Static lead-gen template. Built first for **orlandoflatroofleakrepair.com**; clone it for the other domains.
+Static lead-gen template. Built first for **orlandoroofleakrepair.com** (flat and low-slope roof leaks); clone it for the other domains.
 
 ## Run locally
 
@@ -64,6 +64,6 @@ Honeypot field + Netlify's built-in spam filter are always on. Set `forms.recapt
 3. **Forms:** Site configuration → Forms → **Enable form detection**, then redeploy so Netlify finds the `quote` form.
 4. **Lead email:** Forms → Form notifications → Add notification → Email → `David@Bradford-Roofing.com`, form `quote`.
 5. **Go High Level:** Site configuration → Environment variables → add `GHL_WEBHOOK_URL` = your GHL inbound webhook URL, then redeploy.
-6. **Domain:** Domain management → Add domain → `orlandoflatroofleakrepair.com` (add `www` too). Point DNS at Netlify, then wait for the HTTPS certificate.
+6. **Domain:** Domain management → Add domain → `orlandoroofleakrepair.com` (add `www` too). Point DNS at Netlify, then wait for the HTTPS certificate.
 7. **Test:** submit the form on the live site. Check the email, the thank-you page, the GHL contact, and GA4 DebugView.
-8. Search Console: verify via DNS and submit `https://orlandoflatroofleakrepair.com/sitemap-index.xml`.
+8. Search Console: verify via DNS and submit `https://orlandoroofleakrepair.com/sitemap-index.xml`.
